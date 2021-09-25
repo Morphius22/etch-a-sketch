@@ -1,6 +1,6 @@
 const container = document.querySelector(".container");
 
-function createGrid2 (rows, cols) {
+function createGrid (rows, cols) {
     for (let i = 0; i <= (rows * cols); i++) {
         const div = document.createElement('div');
         div.classList.add('block');
@@ -9,7 +9,7 @@ function createGrid2 (rows, cols) {
     }
 }
 
-createGrid2 (16,16);
+createGrid (16,16);
 
 
 // create divs -> organize on the page ->
