@@ -1,7 +1,7 @@
 const container = document.querySelector(".container");
 
 function createGrid (rows, cols) {
-    for (let i = 0; i <= (rows * cols); i++) {
+    for (let i = 0; i <= (rows * cols)-1; i++) {
         const div = document.createElement('div');
         div.classList.add('block');
         div.textContent = i;
