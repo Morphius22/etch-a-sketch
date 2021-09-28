@@ -14,11 +14,25 @@ function changeColor (event) {
     //event.target.style.opacity += 0.1;
 }
 
-createGrid (16,16);
+function resetBoard (event) {
+    let boardSize = prompt ("How large of a board would you like?", "16")
+    let x = boardSize;
+    boardSize = parseInt(x);
+    createGrid (boardSize, boardSize);
+    addSketch();
+}
 
-const blocks = document.querySelectorAll(".block");
-blocks.forEach(block => block.addEventListener("mouseover", changeColor));
-console.log (blocks);
+function addSketch () {
+    const blocks = document.querySelectorAll(".block");
+    blocks.forEach(block => block.addEventListener("mouseover", changeColor));
+    console.log (blocks);
+}
+
+createGrid (16,16);
+addSketch ();
+
+const resetBtn = document.querySelector(".reset");
+resetBtn.addEventListener('click', resetBoard)
 
 // while (run == true) {
 //     let i = 0;
