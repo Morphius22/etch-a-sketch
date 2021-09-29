@@ -4,7 +4,7 @@ function createGrid (rows, cols) {
     for (let i = 0; i <= (rows * cols)-1; i++) {
         const div = document.createElement('div');
         div.classList.add('block');
-        div.textContent = i;
+        //div.textContent = i;
         container.append(div);
     }
 }
@@ -14,7 +14,8 @@ function changeColor (event) {
     //event.target.style.opacity += 0.1;
 }
 
-function resetBoard (event) {
+function resetBoard () {
+    removeBoard();
     let boardSize = prompt ("How large of a board would you like?", "16")
     let x = boardSize;
     boardSize = parseInt(x);
@@ -26,6 +27,14 @@ function addSketch () {
     const blocks = document.querySelectorAll(".block");
     blocks.forEach(block => block.addEventListener("mouseover", changeColor));
     console.log (blocks);
+}
+
+function removeBoard (event) {
+    const blocks = document.querySelectorAll('.block');
+
+    for (let i = 0; i < blocks.length; i++) {
+        blocks[i].remove();
+    }
 }
 
 createGrid (16,16);
