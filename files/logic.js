@@ -10,7 +10,14 @@ function createGrid (rows, cols) {
 }
 
 function changeColor (event) {
-    event.target.style.backgroundColor = "#4b14e0";
+    let r = Math.floor(Math.random()*255);
+    let g = Math.floor(Math.random()*255);
+    let b = Math.floor(Math.random()*255);
+    console.log(r);
+    console.log(g);
+    console.log(b);
+    let rgb = "rgb(" + r + "," + g + "," + b + ")";
+    event.target.style.backgroundColor = rgb;
     //event.target.style.opacity += 0.1;
 }
 
